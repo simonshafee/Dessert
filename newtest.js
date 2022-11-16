@@ -30,3 +30,4 @@ class Pet {
   const July = new PetMeds("July",2, "Dog", "GS","B&T","08:00");
   const Barney = new Pet("Barney",4, "Dog", "cat","B&T","08:00")
   console.log(July.giveMeds("55"))
+  console.log('asdas')
