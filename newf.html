@@ -3,10 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=git, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        h1{
+            color: goldenrod;
+        }
+        #main{
+            width: 70%;
+            height: 500px;
+            margin: 0 auto;
+            
+        }
+        *{
+            border: 2px solid red;
+            text-align: center;
+        }
+        .col{
+            width: 80%;
+            height: 80%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            grid-template-rows: 20% 20% 20% 20% 20%;
+            
+        }
+        .blue{
+            background-color: aqua;
+            grid-column-start: 2;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            border-radius: 50%;
+            border-bottom-color: white;
+
+        }
+
+    </style>
 </head>
 <body>
+    <h1>Hello wolrd</h1>
+    <div id="main">
+        <div class="col">
+            <div class="blue"><p>hey , can you see it?</p>
+
+            </div>
+
+        </div>
+        
+
+    </div>
     
 </body>
 </html>
