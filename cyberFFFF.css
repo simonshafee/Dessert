@@ -1,22 +1,25 @@
 *{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     text-align: center;
 }
 body{
     margin: 0 auto;
     text-align: center;
+    background-image: url(./111.jpg);
 }
 main{
+    display: inline-block;
     width: 80%;
     height: 500px;
     margin: 0 auto;
     max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.648);
 }
 #drink{
     width: 25%;
     height: 10%;
     margin-top: 60%;
-    background-color: gold;
+    background-color: rgba(255, 217, 0, 0.56);
     border-radius: 20%;
 }
 
@@ -24,8 +27,9 @@ main{
     width: 25%;
     height: 10%;
     margin-left: 74.5%;
-    margin-top: -12%;
+    margin-top: -9%;
     border-radius: 20%;
+    background-color: rgba(255, 34, 34, 0.65);
 
 
 }
@@ -34,25 +38,22 @@ main{
     height: 10%;
     margin-top: 10%;
     border-radius: 20%;
+    background-color: rgba(172, 255, 47, 0.501);
 
 }
 #sleep{
     width: 25%;
     height: 10%;
     margin-left: 74.5%;
-    margin-top: -12%;
+    margin-top: -10%;
     border-radius: 20%;
+    background-color: rgba(255, 166, 0, 0.781);
 
 }
-/* #drink #kd{
-    width: 100%;
-    height: 100%;
-    background-color: yellow;
-} */
+
 button{
     width: 100%;
     height: 100%;
-
     border-radius: 50%;
 
 }
@@ -60,8 +61,18 @@ button{
     color: blue;
     
 }
+#food #k2:hover {
+    color: red;
+}
+#play #k3:hover {
+    color: green;
+}
+#sleep #k4:hover {
+    color: orange;
+}
 
-#drink #k1{
+#drink #k1,#k2,#k3,#k4 {
     background-color: rgb(139, 237, 242);
-    font-size: 22px;
+    font-size: 18px;
+    color: red;
 }

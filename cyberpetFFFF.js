@@ -7,15 +7,13 @@ class Pet {
         this.health = 10;
         
     }
-    get addDrink () {
+    get addDrink() {
         return `Drink Level:${this.drinkLevel+=5} `;
     }
     get addfood() {
         return `Food Level:${this.foodLevel+=5}`
     }
-    get addfood() {
-        return `Food Level:${this.foodLevel+=5}`
-    }
+
     get play() {
         return `happiness:${this.happiness+=5}`
     }
@@ -25,15 +23,29 @@ class Pet {
     
 }
 
-const dog = new Pet("dog");
-const cat = new Pet("cat");
-console.log(dog.addfood);
-console.log(dog.addfood);
-console.log(dog.addfood);
-console.log(dog.addDrink)
-console.log(dog.addDrink)
-console.log(dog);
-console.log(cat.addfood)
-console.log(cat.addfood)
-console.log(cat.addfood)
-console.log(cat)
+let dog = new Pet("dog");
+let cat = new Pet("cat");
+
+// console.log(dog)
+// document.write("<h1>sdasdasdx<h1>")
+
+
+
+
+
+
+//   document.getElementById("k1").onclick = dog.addDrink
+
+
+//const drink = document.dog.addDrink
+
+// console.log(dog.addfood);
+// console.log(dog.addfood);
+// console.log(dog.addfood);
+// console.log(dog.addDrink)
+// console.log(dog.addDrink)
+// console.log(dog);
+// console.log(cat.addfood)
+// console.log(cat.addfood)
+// console.log(cat.addfood)
+// console.log(cat)

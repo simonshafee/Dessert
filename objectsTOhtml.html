@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="chartBox">
+        <p>Nestle Milk 150</p>
+    </div>
+
+
+    <script>
+        
+        //document.write("dsfjkbn kj sdf");
+        const pr =[{
+            id:1,
+            brand: 'sadasd',
+            a2:'adasd',
+            a3:'sads'
+        },
+        {
+            id:2,
+            brand: 'qweqwe',
+            a2:'adasd',
+            a3:'sads'
+        },
+        {
+            id:3,
+            brand: 'sadaasdqwesd',
+            a2:'adasd',
+            a3:'sads'
+        }];
+
+        const products = pr
+        // console.log(a)
+        const chartBox = document.getElementById("chartBox");
+       // console.log(chartBox);
+
+        products.forEach((product, index)=>{
+            let itemHR = document.createElement("HR");
+            let itemP = document.createElement('P');
+            let itemPText = document.createTextNode(`${product.brand}: &${product.a2}: 3${product.a3}`);
+            itemP.appendChild(itemPText);
+
+            chartBox.appendChild(itemP);
+            chartBox.appendChild(itemHR)
+
+
+        })
+
+    </script>
+    
+</body>
+</html>
