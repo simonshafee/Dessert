@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        const products = [{
+            id:1,
+            brand: 'wqeewq',
+            a2:'adasd',
+            a3:'sads'
+        },
+        {   id:2,
+            brand: 'sdfsdf',
+            a2:'adasd',
+            a3:'sads'
+        },
+        { 
+           id:3,
+            brand: 'dsfdfs',
+            a2:'adasd',
+            a3:'sads'
+        },
+        { 
+           id:4,
+            brand: 'dsf',
+            a2:'adasd',
+            a3:'sads'
+        }]
+
+        console.log(products)
+        const box = document.getElementById("box");
+
+        products.forEach((product,index)=>{
+            let HR = document.createElement("HR");
+            let itemP = document.createElement("P");
+            let itemPText = document.createTextNode(product.brand)
+            
+            itemP.appendChild(itemPText)
+            box.appendChild(itemP);
+            box.appendChild(HR)
+        })
+       
+
+    </script>
+    
+</body>
+</html>

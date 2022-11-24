@@ -1,0 +1,231 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Egbert--Virtual Pet</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/assets/shell.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 98vh;
+    width: 99vw;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: center;
+    height: 48vh;
+    width: 48vh;
+    margin-top: 6.5vh;
+    margin-left: 2.5vh;
+}
+
+#pet-stats ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 6vh;
+}
+
+#pet-zone {
+    height: 50vh;
+}
+
+#user-actions {
+    display: flex;
+    justify-content: center;
+    height: 4vh;
+    width: inherit;
+}
+
+#user-actions ul {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: inherit;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="game-wrapper">
+            <div id="pet-stats">
+                <ul>
+                    <li><img id="hunger" src="assets/Icons/hungerbar/hungerbar100.png" alt="hunger" /></li>
+                    <li><img id="health" src="assets/Icons/healthbar/healthbar100.png" /></li>
+                    <li><img id="happiness" src="assets/Icons/happinessbar/happinessbar100.png" /></li>
+                </ul>
+            </div>
+
+            <div id="pet-zone">
+                    
+            </div>
+
+            <div id="user-actions">
+                <ul>
+                    <li><input id="feed" type="image" src="assets/Icons/feed.png" /></li>
+                    <li><input id="rest" type="image" src="assets/Icons/rest.png" /></li>
+                    <li><input id="play" type="image" src="assets/Icons/play.png" /></li>
+                </ul>
+            </div>
+
+            <div id="reset">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        const f = document.getElementById("feed");
+const r = document.getElementById("rest");
+const p = document.getElementById("play");
+
+const health = document.getElementById("health");
+const hunger = document.getElementById("hunger");
+const happiness = document.getElementById("happiness")
+
+const reset = document.getElementById("reset")
+
+class Chicken{
+    constructor(name){
+        this.name = name;
+        this.health = 100;
+        this.hunger = 100;
+        this.happiness = 100;
+        this.resting = false;
+    }
+
+    // feed/hunger drain
+    feed(){
+        if (egbert.hunger < 100) {
+            egbert.hunger+= 10;
+            egbert.happiness+= 10;
+            hunger.src = `assets/Icons/hungerbar/hungerbar${egbert.hunger}.png`;
+            console.log(`fed: hunger ${egbert.hunger}`);
+        }
+        else {}
+    }
+
+    hungerDrain()
+    {
+        var hungerValue = setInterval(function(){
+            egbert.hunger-= 10;
+            console.log(`feed-drain: hunger ${egbert.hunger}`);
+            hunger.src = `assets/Icons/hungerbar/hungerbar${egbert.hunger}.png`;
+
+            if(egbert.hunger === 0){
+                clearInterval(hungerValue)
+                console.log("cleared: hunger")
+                egbert.petDeath();
+            }  
+        }, 3500);
+    }
+
+    // rest/health drain
+    rest(){
+        if (egbert.health <= 100) {
+            egbert.health+= 20;
+            health.src = `assets/Icons/healthbar/healthbar${egbert.health}.png`;
+            console.log(`rested: health ${egbert.health}`);
+        }
+        else {}
+    }
+
+    healthDrain()
+    {
+        var healthValue = setInterval(function(){
+            if(egbert.hunger <= 70){
+               egbert.health-= 10; 
+               console.log(`rest-drain: health ${egbert.health}`);
+               health.src = `assets/Icons/healthbar/healthbar${egbert.health}.png`;
+            }
+
+            if(egbert.health === 0){
+                clearInterval(healthValue)
+                console.log("cleared: health")
+                egbert.petDeath();
+            }
+            else{}
+        }, 2500);
+    }
+
+    // play/happiness drain
+    play(){
+        if (egbert.happiness <= 100) {
+            egbert.happiness+= 20;
+            happiness.src = `assets/Icons/happinessbar/happinessbar${egbert.happiness}.png`;
+            console.log(`played: happiness ${egbert.happiness}`);
+        }
+        else {}
+    }
+
+    happinessDrain()
+    {
+        var happinessValue = setInterval(function(){
+            if(egbert.happiness <= 100){
+               egbert.happiness-= 10; 
+               console.log(`happ-drain: happiness ${egbert.happiness}`);
+               happiness.src = `assets/Icons/happinessbar/happinessbar${egbert.happiness}.png`;
+            }
+
+            if(egbert.happiness === 0){
+                clearInterval(happinessValue)
+                console.log("cleared: happiness")
+                egbert.petDeath();
+            }
+            else{}
+        }, 4000);
+    }
+
+
+    petDeath()
+    {
+        if(egbert.happiness == 0 || egbert.health == 0 || egbert.hunger == 0){
+
+            console.log("show reset window")
+        }
+        else{}
+        
+    }
+
+}
+
+// onload actions
+const egbert = new Chicken("Egbert");
+
+egbert.hungerDrain();
+egbert.healthDrain();
+egbert.happinessDrain();
+
+// user-action buttons
+f.onclick = egbert.feed;
+r.onclick = egbert.rest;
+p.onclick = egbert.play;
+    </script>
+</body>
+</html>

@@ -8,71 +8,70 @@ body{
     background-image: url(./111.jpg);
 }
 main{
-    display: inline-block;
+    /* display: inline-block; */
     width: 80%;
     height: 500px;
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 1500px;
+    /* min-width: 400px; */
     background-color: rgba(255, 255, 255, 0.648);
 }
-#drink{
-    width: 25%;
-    height: 10%;
-    margin-top: 60%;
-    background-color: rgba(255, 217, 0, 0.56);
-    border-radius: 20%;
-}
-
-#food{
-    width: 25%;
-    height: 10%;
-    margin-left: 74.5%;
-    margin-top: -9%;
-    border-radius: 20%;
-    background-color: rgba(255, 34, 34, 0.65);
-
-
-}
-#play{
-    width: 25%;
-    height: 10%;
-    margin-top: 10%;
-    border-radius: 20%;
-    background-color: rgba(172, 255, 47, 0.501);
-
-}
-#sleep{
-    width: 25%;
-    height: 10%;
-    margin-left: 74.5%;
-    margin-top: -10%;
-    border-radius: 20%;
-    background-color: rgba(255, 166, 0, 0.781);
-
-}
-
-button{
-    width: 100%;
+#button-container{
+    width: 50%;
     height: 100%;
-    border-radius: 50%;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
-#drink #k1:hover {
-    color: blue;
+#button-container2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     
 }
-#food #k2:hover {
-    color: red;
+
+#bbt{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 3%;
+    display: inline-flexbox;
 }
-#play #k3:hover {
-    color: green;
+p{
+    font-family:   sans-serif;
 }
-#sleep #k4:hover {
-    color: orange;
+#feed ,#drink ,#play ,#sleep {
+    border-radius: 50%;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgb(122, 233, 66);
+}
+#feed:hover{
+    color: bisque;
+}
+#drink:hover{
+    color: bisque;
+}
+#play:hover{
+    color: bisque;
+}
+#sleep:hover{
+    color: bisque;
+}
+#img-container{
+    width: 49%;
+    height: 45%;
+    z-index: 2;
+
 }
 
-#drink #k1,#k2,#k3,#k4 {
-    background-color: rgb(139, 237, 242);
-    font-size: 18px;
-    color: red;
+#buttonss{
+    width: 50%;
+    height: 50%;
+    margin-left: 50%;
+    margin-top: -25%;
+    font-size: 20px;
 }
