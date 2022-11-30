@@ -1,4 +1,4 @@
-/////////////INFO DISPLAY
+///////////////////////////INFO DISPLAY
 const health =document.getElementById("health");
 const hunger = document.getElementById("hunger");
 const thirst = document.getElementById("thirst");
@@ -8,7 +8,8 @@ const happiness= document.getElementById("happiness");
 const feed = document.getElementById("feed");
 const drink = document.getElementById("drink");
 const play = document.getElementById("play");
-const sleep = document.getElementById("sleep")
+const sleep = document.getElementById("sleep");
+///img
 const image = document.getElementById("pet-img")
 
 let pet = {
@@ -19,38 +20,38 @@ let pet = {
     health:100,
     feedpet(){
     /////sub
-    this.hunger -=5;
-    this.cleanliness -=5;
-    this.happiness -= 5;
+    this.hunger -=10;
+    this.cleanliness -=2;
+    this.happiness -= 2;
     //sum
-    this.thirst +=5;
-    this.health+=10;
+    this.thirst +=2;
+    this.health+=2;
     },
     drinkpet(){
         ///sub
         this.thirst-=10;
-        this.cleanliness-=5;
+        this.cleanliness-=2;
         ///sum
-        this.happiness-=5;
-        this.happiness-=5;
-        this.health+=5;
+        this.happiness-=2;
+        this.happiness-=2;
+        this.health+=2;
     },
     playpet(){
         ///sum
-        this.play+=10;
-        this.thirst+=10;
-        this.hunger+=10;
-        this.happiness-=5;
-        this.health-=5;
+        this.play-=10;
+        this.thirst+=2;
+        this.hunger+=2;
+        this.happiness-=2;
+        this.health-=2;
         ///sub
         this.cleanliness-=10
     },
     goSleep(){
         ///sum
         this.happiness+=10;
-        this.thirst+=10;
-        this.hunger+=10;
-        this.cleanliness+=20
+        this.thirst+=2;
+        this.hunger+=2;
+        this.cleanliness+=5
     }
 
 }
